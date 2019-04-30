@@ -87,7 +87,8 @@ def classify_tweets(csv_filename):
             y.append(row[0])  # get class
     X = np.array(X)  # convert to numpy array for scikit-learn
     y = np.array(y)  # convert to numpy array for scikit-learn
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, train_size=0.01, random_state=42)
+    # TODO: Remember to change the test size back to 0.2
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     vec = CountVectorizer(ngram_range = (1, 1), min_df = 1)
     cnt_stats = vec.fit(X_train)
@@ -125,7 +126,8 @@ def predictive_words(csv_filename):
             y.append(row[0])  # get class
     X = np.array(X)  # convert to numpy array for scikit-learn
     y = np.array(y)  # convert to numpy array for scikit-learn
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, train_size=0.01, random_state=42)
+    #TODO: Remember to change the test size back to 0.2
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random_state=42)
 
     vec = CountVectorizer(ngram_range = (1, 1), min_df = 1)
     cnt_stats = vec.fit(X_train)
